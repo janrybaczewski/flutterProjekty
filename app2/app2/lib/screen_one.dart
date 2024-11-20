@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class ScreenOne extends StatefulWidget {
   const ScreenOne(this.switchScreen);
   final void Function() switchScreen;
+
   @override
   State<ScreenOne> createState() {
-    return _ScreenOne(switchScreen);
+    return _ScreenOne(this.switchScreen);
   }
 }
 
@@ -17,13 +18,15 @@ class _ScreenOne extends State<ScreenOne> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.yellow,
-        child: Center(
-          child: TextButton(
-              onPressed: () {
-                switchScreen();
-              },
-              child: Text("switch to 2")),
-        ));
+      color: Colors.yellow,
+      child: Center(
+        child: TextButton(
+          onPressed: () {
+            switchScreen();
+          },
+          child: Text("Switch to Screen Two"),
+        ),
+      ),
+    );
   }
 }

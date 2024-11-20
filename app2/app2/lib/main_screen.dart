@@ -12,7 +12,8 @@ class MainScreen extends StatefulWidget {
 class _MainScreen extends State<MainScreen> {
   void screenSwitch() {
     setState(() {
-      activeScreenName = "ScreenTwo";
+      activeScreenName =
+          activeScreenName == "ScreenOne" ? "ScreenTwo" : "ScreenOne";
     });
   }
 
@@ -21,9 +22,11 @@ class _MainScreen extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            body: activeScreenName == "ScreenOne"
-                ? ScreenOne(screenSwitch)
-                : ScreenTwo()));
+      home: Scaffold(
+        body: activeScreenName == "ScreenOne"
+            ? ScreenOne(screenSwitch)
+            : ScreenTwo(screenSwitch),
+      ),
+    );
   }
 }
