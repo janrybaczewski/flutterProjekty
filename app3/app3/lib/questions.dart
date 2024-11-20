@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Questions extends StatefulWidget {
-  const Questions({super.key});
+  const Questions(void Function() switchScreen, {super.key});
 
   @override
   State<Questions> createState() {
